@@ -1,0 +1,7 @@
+.page_holder{
+    display: flex;
+    gap:1rem;
+}
+.tab_item{
+    background-color: #bfba55;
+}

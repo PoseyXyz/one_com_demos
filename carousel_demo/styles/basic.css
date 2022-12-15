@@ -1,0 +1,96 @@
+.gel-carousel__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    list-style-type: none;
+    gap: 1rem;
+    width: auto;
+    overflow: visible;
+
+  }
+  .gel-carousel__scrollable{
+   
+    
+  }
+  .card{
+    background-color: #dcdcdc;
+    padding: 1.1rem;
+    border-radius: 5px;
+  }
+  .card img{
+    width: 100%;
+  }
+
+  .card button{
+    padding: .7rem 1.5rem;
+    cursor: pointer;
+    outline: none;
+   
+  }
+  
+  .gel-carousel__list > li {
+    display: flex;
+    flex-shrink: 0;
+    white-space: normal;
+    width: 266px; /* standard Promo width */
+    transition: opacity 0.5s linear;
+  }
+
+  .gel-carousel__list > li[inert] {
+    opacity: 0.3;
+  }
+  
+  .gel-carousel__list > li + li {
+    margin-left: 1rem;
+  }
+
+  .gel-carousel__scrollable::-webkit-scrollbar {
+    height: 0.5rem;
+  }
+  
+  .gel-carousel__scrollable::-webkit-scrollbar-track {
+    background-color: green;
+  }
+  
+  .gel-carousel__scrollable::-webkit-scrollbar-thumb {
+    background-color: #bfba55;
+  }
+  .gel-carousel__buttons button[disabled] {
+    opacity: 0.5;
+  }
+  .gel-carousel__scrollable {
+    scroll-behavior: smooth;
+  }
+  
+
+  .document__body{
+ 
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+  }
+
+  .btn__container{
+  
+    display: flex;
+    justify-content: center;
+    gap:1rem
+  }
+
+  .carousel__btn{
+    border: none;
+    outline: none;
+    padding: .7rem 3rem;
+    font-size: 2.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 800;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gel-carousel__scrollable {
+      scroll-behavior: auto;
+    }
+  }

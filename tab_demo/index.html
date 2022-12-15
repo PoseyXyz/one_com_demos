@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/basic.css">
+    </link>
+    <script src="./index.js"></script>
+</head>
+
+
+<body onload="displayNodeButtons()">
+    <div>
+        <div class="btn_holder">
+            <!-- <button class="tab_button" onclick="displayNodeItems()">
+                Open tab 1
+            </button>
+            <button class="tab_button" onclick="displayNodeItems()">
+                Open tab 2
+            </button>
+            <button class="tab-button" onclick="displayNodeItems()">
+                Open tab 3
+            </button> -->
+        </div>
+
+        <div class="display_tab" id="display_tab">
+            <h1 class="tab_item">Tab one open</h1>
+        </div>
+
+        <div class="page_holder">
+            <h1 class="tab_item">Tab one open</h1>
+            <h1 class="tab_item">Tab two open</h1>
+            <h1 class="tab_item">Tab three open</h1>
+        </div>
+    </div>
+</body>
+
+<script>
+    const tab_buttons = [
+        {
+            innerText: 'Tab one open',
+            id: 0,
+        },
+        {
+            innerText: 'Tab two open',
+            id: 1,
+        },
+        {
+            innerText: 'Tab three open',
+            id: 2,
+        }
+    ]
+
+    function displayNodeButtons() {
+
+
+        const btn_holder = document.querySelector('.btn_holder')
+        btn_holder.innerHTML = tab_buttons.map((element, index) => {
+            return (
+                `<button onclick='displayTab(${element.id}, "${element.innerText}")'>${element.innerText}</button>`
+
+            )
+        })
+        console.log(btn_holder);
+    }
+    function displayTab(id, text) {
+        const tab_items = [...document.querySelectorAll('.tab_item')]
+
+        const display_tab = document.querySelector('.display_tab')
+        display_tab.innerHTML = `<h1 class="tab_item">${text}</h1>`
+        console.log(tab_items[id].outerHTML)
+        console.log(id);
+    }
+</script>
+
+
+</html>
