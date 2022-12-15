@@ -27,7 +27,17 @@
         </div>
 
         <div class="display_tab" id="display_tab">
-            <h1 class="tab_item">Tab one open</h1>
+            <div class="tab_item">
+                <h1> Tab one open</h1>
+                <p>Enim nisi eu veniam ipsum proident laboris deserunt mollit do id veniam. Veniam incididunt irure
+                    voluptate est irure adipisicing reprehenderit pariatur. Officia non nostrud eiusmod esse sint ea est
+                    nulla occaecat amet id mollit nulla. Anim commodo magna incididunt eu veniam. Magna proident eiusmod
+                    dolore ut est consectetur amet sint ea. Eiusmod tempor enim voluptate reprehenderit amet cupidatat
+                    deserunt tempor eiusmod laboris sunt nostrud Lorem. Nostrud excepteur sit incididunt excepteur non
+                    veniam occaecat velit officia reprehenderit. Aute anim sunt aute laborum. Sit minim commodo est elit
+                    commodo incididunt commodo velit velit id dolore excepteur tempor cupidatat.</p>
+            </div>
+
         </div>
 
         <div class="page_holder">
@@ -43,34 +53,55 @@
         {
             innerText: 'Tab one open',
             id: 0,
+            paragraph: 'Enim nisi eu veniam ipsum proident laboris deserunt mollit do id veniam. Veniam incididunt irure voluptate est irure adipisicing reprehenderit pariatur. Officia non nostrud eiusmod esse sint ea est nulla occaecat amet id mollit nulla. Anim commodo magna incididunt eu veniam. Magna proident eiusmod dolore ut est consectetur amet sint ea. Eiusmod tempor enim voluptate reprehenderit amet cupidatat deserunt tempor eiusmod laboris sunt nostrud Lorem. Nostrud excepteur sit incididunt excepteur non veniam occaecat velit officia reprehenderit. Aute anim sunt aute laborum. Sit minim commodo est elit commodo incididunt commodo velit velit id dolore excepteur tempor cupidatat.'
         },
         {
             innerText: 'Tab two open',
             id: 1,
+            paragraph: 'In commodo sint labore voluptate ipsum exercitation excepteur est Lorem officia non id sunt. Duis veniam qui tempor eiusmod duis quis do elit est commodo magna nulla. Ipsum ut duis laborum est dolore proident magna in dolor Lorem est. Ad minim est dolore cupidatat consectetur deserunt dolore et adipisicing incididunt voluptate proident. Irure veniam exercitation magna id do ex ex exercitation elit incididunt minim. Minim eiusmod irure laborum consectetur est consequat velit eu qui. Adipisicing irure commodo eiusmod excepteur ad culpa.'
         },
         {
             innerText: 'Tab three open',
             id: 2,
+            paragraph: 'Fugiat mollit esse labore aliquip ullamco irure quis consequat sint in. Ipsum Lorem eu ea deserunt commodo elit enim cillum reprehenderit reprehenderit ex eu. Cillum ea pariatur reprehenderit non mollit commodo amet irure qui occaecat adipisicing ex duis. Aliqua velit enim est ut aute fugiat est magna Lorem adipisicing nisi dolore nostrud minim. Adipisicing nulla ex ea aliquip magna excepteur labore. Velit non in eiusmod ad duis ullamco quis sunt sint consectetur. Minim ex commodo nulla do officia est.'
         }
     ]
 
+    let currentID = 0
+
     function displayNodeButtons() {
-
-
         const btn_holder = document.querySelector('.btn_holder')
         btn_holder.innerHTML = tab_buttons.map((element, index) => {
             return (
-                `<button onclick='displayTab(${element.id}, "${element.innerText}")'>${element.innerText}</button>`
-
+                `<button class="tab_button active_btn"
+                
+                onclick="changeBtnColor(${index}); displayTab(${element.id}, '${element.innerText}', '${element.paragraph}')">${element.innerText}</button>`
             )
-        })
+        }).join("")
         console.log(btn_holder);
     }
-    function displayTab(id, text) {
-        const tab_items = [...document.querySelectorAll('.tab_item')]
+    function changeBtnColor(id) {
+        currentID = id
+        const tab_buttons = document.querySelectorAll('.tab_button')
+        for (let i = 0; i < tab_buttons.length; i++) {
+            const element = tab_buttons[i];
+            if (currentID === i) {
+                element.style.backgroundColor = "#fff"
+                element.style.color = "#000"
+            } else {
+                element.style.backgroundColor = "#1abc9c"
+                element.style.color = "#fff"
+            }
+        }
 
+        console.log(currentID);
+    }
+    function displayTab(id, text, paragraph) {
+        const tab_items = [...document.querySelectorAll('.tab_item')]
         const display_tab = document.querySelector('.display_tab')
-        display_tab.innerHTML = `<h1 class="tab_item">${text}</h1>`
+        display_tab.innerHTML = `<div class="tab_item"><h1>${text}</h1>
+            <p>${paragraph}</p>
+            </div>`
         console.log(tab_items[id].outerHTML)
         console.log(id);
     }
