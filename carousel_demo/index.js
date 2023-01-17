@@ -20,6 +20,7 @@ function next() {
     }  
 }
 
+
 function previous(){
     const carousel_el = document.querySelector('.gel-carousel__scrollable')
     if(current_val<=max_width){

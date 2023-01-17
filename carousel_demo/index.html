@@ -12,9 +12,9 @@
 </head>
 
 <body>
-    
-    <h1 class="headline"></h1>
 
+    <h1 class="headline"></h1>
+    <button onclick="example()">Trigger OPEN AI</button>
     <div class="document__body">
         <div class="gel-carousel" role="group">
             <div class="gel-carousel__buttons" hidden>
@@ -235,50 +235,53 @@
 
         <div class="btn__container">
             <button onclick="previous()" class="carousel__btn">
-                <</button>
+                < </button>
                     <button onclick="next()" class="carousel__btn">></button>
 
         </div>
     </div>
 
+
+    <!-- <script>
+        let current_val = 0
+        let total_card_length = 13
+        let cards_on_display = 6
+        let card_pixel_width = 266
+        let max_width = card_pixel_width * cards_on_display
+        let total_width = card_pixel_width * total_card_length
+        let last_offset = total_width - max_width
+        let multiplier = 2.9
+    
+        function next() {
+            const carousel_el = document.querySelector('.gel-carousel__scrollable')
+            if (current_val > last_offset) {
+                current_val = 0
+                carousel_el.style.transform = `translateX(-${current_val}px)`
+                carousel_el.style.transitionDuration = '2s'
+            } else {
+                current_val += card_pixel_width * multiplier
+                carousel_el.style.transform = `translateX(-${current_val}px)`
+                carousel_el.style.transitionDuration = '2s'
+            }
+        }
+    
+        function previous() {
+            const carousel_el = document.querySelector('.gel-carousel__scrollable')
+            if (current_val <= max_width) {
+                current_val = 0
+                carousel_el.style.transform = `translateX(${0}px)`
+                carousel_el.style.transitionDuration = '2s'
+            } else {
+                current_val -= card_pixel_width * multiplier
+                carousel_el.style.transform = `translateX(-${current_val}px)`
+                carousel_el.style.transitionDuration = '2s'
+            }
+        }
+    
+    </script> -->
+    
+
 </body>
 
-<script>
-    let current_val = 0
-    let total_card_length = 13
-    let cards_on_display = 6
-    let card_pixel_width = 266
-    let max_width = card_pixel_width * cards_on_display
-    let total_width = card_pixel_width * total_card_length
-    let last_offset = total_width - max_width
-    let multiplier = 2.9
-
-    function next() {
-        const carousel_el = document.querySelector('.gel-carousel__scrollable')
-        if (current_val > last_offset) {
-            current_val = 0
-            carousel_el.style.transform = `translateX(-${current_val}px)`
-            carousel_el.style.transitionDuration = '2s'
-        } else {
-            current_val += card_pixel_width * multiplier
-            carousel_el.style.transform = `translateX(-${current_val}px)`
-            carousel_el.style.transitionDuration = '2s'
-        }
-    }
-
-    function previous() {
-        const carousel_el = document.querySelector('.gel-carousel__scrollable')
-        if (current_val <= max_width) {
-            current_val = 0
-            carousel_el.style.transform = `translateX(${0}px)`
-            carousel_el.style.transitionDuration = '2s'
-        } else {
-            current_val -= card_pixel_width * multiplier
-            carousel_el.style.transform = `translateX(-${current_val}px)`
-            carousel_el.style.transitionDuration = '2s'
-        }
-    }
-
-</script>
 
 </html>
