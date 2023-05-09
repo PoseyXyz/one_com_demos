@@ -35,28 +35,28 @@ function previous(){
 }
 
 
- // console.log(current_val);
-    // // const headline = document.querySelector('.headline')
-    // // headline.innerHTML =  'Hello'
-    // console.log(`${current_val * totalWidth}`)
-    // carousel_el.style.transform = `translateX(-${current_offset}px)`
-    // carousel_el.style.transitionDuration = '2s'
+//  console.log(current_val);
+//     // const headline = document.querySelector('.headline')
+//     // headline.innerHTML =  'Hello'
+//     console.log(`${current_val * totalWidth}`)
+//     carousel_el.style.transform = `translateX(-${current_offset}px)`
+//     carousel_el.style.transitionDuration = '2s'
 
-    // if (current_val >= 30) {
-    //     current_val = 0
-    //     console.log(current_val);
-    //     const carousel_el = document.querySelector('.gel-carousel__list')
-    //     // const headline = document.querySelector('.headline')
-    //     // headline.innerHTML = 'Hello'
-    //     carousel_el.style.transform = `translateX(-${1 * current_val}%)`
-    //     carousel_el.style.transitionDuration = '2s'
-    // } else {
-    //     current_val += 30
-    //     console.log(current_val);
-    //     const carousel_el = document.querySelector('.gel-carousel__list')
-    //     // const headline = document.querySelector('.headline')
-    //     // headline.innerHTML = 'Hello'
-    //     carousel_el.style.transform = `translateX(-${1 * current_val}%)`
-    //     carousel_el.style.transitionDuration = '2s'
+//     if (current_val >= 30) {
+//         current_val = 0
+//         console.log(current_val);
+//         const carousel_el = document.querySelector('.gel-carousel__list')
+//         // const headline = document.querySelector('.headline')
+//         // headline.innerHTML = 'Hello'
+//         carousel_el.style.transform = `translateX(-${1 * current_val}%)`
+//         carousel_el.style.transitionDuration = '2s'
+//     } else {
+//         current_val += 30
+//         console.log(current_val);
+//         const carousel_el = document.querySelector('.gel-carousel__list')
+//         // const headline = document.querySelector('.headline')
+//         // headline.innerHTML = 'Hello'
+//         carousel_el.style.transform = `translateX(-${1 * current_val}%)`
+//         carousel_el.style.transitionDuration = '2s'
 
-    // }
+//     }
